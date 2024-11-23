@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main.views import get_random_word, get_all, delete_all
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('random/<int:size>', get_random_word),
+    path('ga', get_all),
+    path('del/', delete_all)
 ]
